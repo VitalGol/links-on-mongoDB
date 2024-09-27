@@ -2,17 +2,18 @@
 import axios from 'axios';
 // <List key={elem.id} name={elem.name} id={elem._id} />
 const List = ({ name, id }) => {
-  const handleEdit = (id) => {
-    console.log('first', id);
-    axios
-      .put(`http://localhost:5000/links/${id}`)
-      // .then((res) => setLinks(res.data))
-      .then((res) => console.log('first', res.data))
-      .catch((error) => console.error('error', error));
-  };
+  // const handleEdit = (id) => {
+  //   console.log('first', id);
+  //   axios
+  //     .put(`${process.env.VITE_API}/${id}`)
+  //     // .then((res) => setLinks(res.data))
+  //     .then((res) => console.log('first', res.data))
+  //     .catch((error) => console.error('error', error));
+  // };
   const handleDelete = (id) => {
+    console.log('----------', id);
     axios
-      .delete(`http://localhost:5000/links/${id}`)
+      .delete(`${process.env.VITE_API}/${id}`)
       .then((res) => console.log('first', res.data))
       .catch((error) => console.error('error', error));
   };
